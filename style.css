@@ -1,0 +1,39 @@
+.jumbotron {
+    text-align: center;
+    background-color: rgb(46, 46, 46);
+    color: black;
+    border-radius: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .display-1 {
+      color:white;
+  }
+
+.currentWeatherDisplay {
+  height: 500px;
+  width: 1200px;
+  background-color: rgb(231, 230, 230);
+  position: absolute;
+  right:60px;
+  border:2px solid black;
+  }
+
+#cityName {
+    height: 5px;
+    position: relative;
+    left:60px;
+    font-weight: bold;
+    font-size: 18px;
+    bottom:20px;
+    left:15px;
+   }
+
+#cityNameInput {
+    height:30px;
+    width: 200px;
+    position: relative;
+    bottom: 10px;
+    left:10px;
+}
