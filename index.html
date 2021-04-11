@@ -40,15 +40,26 @@
     <div>
     <form id="cityForm">
       
-      <h1 id="cityName">Name of the city:</h1>
-      <input type="text" id="cityNameInput" placeholder="Enter the name of a city" />
+      <div id="cityName">City Name</div>
+      <p id="hello2"></p>
+      <input type="text" id="cityNameInput"  placeholder="Enter the name of a city" />
+      <p id="searchForCity">Search for City:</p>
+      <button id="searchButton">Search</button>
     </form>
+
     
-    <div>
-      <b>Temperature:</b> <span id="currentTemperature">Temperature now</span> Kelvin
+    <div id="overallCurrentTemp">
+      <b>Temperature:</b> <span id="currentTemperature" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)" class="outputFahrenheit">Temperature now</span> Farenheit
     </div>
-    <div>
+    
+    <div id="overallCurrentHumidity">
       <b>Humidity:</b> <span id="currentHumidity">Humidity now</span>
+    </div>
+    <div id="overallCurrentWind">
+      <b>Windspeed:</b> <span id="currentWind">Windspeed now</span> 
+    </div>
+    <div id="overallCurrentIndex">
+      <b>UV Index:</b> <span id="currentIndex">UV Index now</span>
     </div>
 
 

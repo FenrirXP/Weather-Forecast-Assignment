@@ -1,4 +1,13 @@
+//function to get current date
+$(document).ready(function(){
+    $("#hello2").text(moment().format("L"));
+});
 
+//function to convert temperature to Fahrenheit
+function temperatureConverter(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("outputFahrenheit").innerHTML=((valNum-273.15)*1.8)+32;
+  }
 
 
 document.getElementById("cityForm").addEventListener("submit",function(event) {
@@ -22,6 +31,8 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
 
             document.getElementById("currentTemperature").innerText=data.main.temp;
             document.getElementById("currentHumidity").innerText=data.main.humidity;
+            document.getElementById("currentWind").innerText=data.wind.speed;
+            document.getElementById("currentIndex").innerText=data.main.humidity;
         })
 
     }
