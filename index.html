@@ -37,11 +37,10 @@
     </header>
 
     <div id="weatherDisplay"  class="currentWeatherDisplay"></div>
-    <div>
+  
     <form id="cityForm">
-      
-      <div id="cityName">City Name</div>
-      <p id="hello2"></p>
+      <div id="cityName" class="hello2">City Name</div>
+      <b id="hello2"></b>
       <input type="text" id="cityNameInput"  placeholder="Enter the name of a city" />
       <p id="searchForCity">Search for City:</p>
       <button id="searchButton">Search</button>
@@ -53,19 +52,25 @@
     </div>
     
     <div id="overallCurrentHumidity">
-      <b>Humidity:</b> <span id="currentHumidity">Humidity now</span>
+      <b>Humidity:</b> <span id="currentHumidity">Humidity now</span>%
     </div>
     <div id="overallCurrentWind">
-      <b>Windspeed:</b> <span id="currentWind">Windspeed now</span> 
+      <b>Windspeed:</b> <span id="currentWind">Windspeed now</span> mph
     </div>
     <div id="overallCurrentIndex">
       <b>UV Index:</b> <span id="currentIndex">UV Index now</span>
     </div>
 
 
+    <div class="forecastContainer"></div>
+    <div id="fiveDayForecast" class="fiveDayForecast"> 5 Day Forecast:
+      
+    </div>
+  
 
 
-  </div>
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

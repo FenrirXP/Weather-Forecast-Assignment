@@ -20,6 +20,16 @@
   border:2px solid black;
   }
 
+  .forecastContainer {
+    height: 300px;
+    width: 1200px;
+    background-color: rgb(231, 230, 230);
+    position: absolute;
+    top:600px;
+    left:323px;
+    border:2px solid black;
+  }
+
 #cityName {
     height: 5px;
     position: absolute;
@@ -93,4 +103,14 @@
   font-size: 30px;
   top:440px;
   left:350px;
+}
+
+#fiveDayForecast {
+  position: absolute;
+  left:60px;
+  font-weight: bold;
+  font-size: 30px;
+  top:550px;
+  left:350px;
+}
 }
