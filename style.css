@@ -60,6 +60,28 @@
   font-size:24px;
 }
 
+#hello3 {
+  position:absolute;
+  left:140px;
+}
+
+#hello4 {
+  position:absolute;
+  left:380px;
+}
+#hello5 {
+  position:absolute;
+  left:620px;
+}
+#hello6 {
+  position:absolute;
+  left:860px;
+}
+#hello7 {
+  position:absolute;
+  left:1100px;
+}
+
 #cityNameInput {
     height:30px;
     width: 200px;

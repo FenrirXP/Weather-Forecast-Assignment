@@ -3,6 +3,7 @@ $(document).ready(function(){
     $("#hello2").text(moment().format("L"));
 });
 
+  
 //function to convert temperature to Fahrenheit
 function temperatureConverter(valNum) {
     valNum = parseFloat(valNum);
@@ -15,6 +16,7 @@ function temperatureConverter(valNum) {
 document.getElementById("cityForm").addEventListener("submit",function(event) {
     event.preventDefault();
     var cityName=document.getElementById("cityNameInput").value;
+    
     
     if(!cityName) {
         alert("Please enter the name of a city.");
@@ -41,22 +43,26 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
 
         })
 
-            
+       //function to get five day forecast     
         fetch(fiveDayRequestUrl).then(function(response) {
             return response.json();
             }).then(function(data) {
             console.log(data);
-
+        
+                   
         
 
         var latitude=data[0].lat;
         var longitude=data[0].lon;
 
         var forecastRequestUrl="https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&appid=befebd5c21afa73e074ce366b9c1c094";
+     
+        
         
         fetch(forecastRequestUrl).then(function(response) {
             return response.json();
             }).then(function(data) {
+                
 
             console.log(data.daily);
 
@@ -74,8 +80,7 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             document.getElementById("forecastWeather4").innerText=data.daily.temp;
             document.getElementById("forecastWeather5").innerText=data.daily.temp;
             
-                
-                
+          
                 
             }
 
@@ -85,43 +90,28 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
 });
 
 
-
-/*document.getElementById("cityForm").addEventListener("submit",function(event) {
-    event.preventDefault();
-    var cityName=document.getElementById("cityNameInput").value;
-    if(!cityName) {
-        alert("Please enter the name of a city.");
-    } else {
-        document.getElementById("cityName").innerText=cityName;
-
-        var requestUrl="http://api.openweathermap.org/geo/1.0/direct?q"+cityName+"&limit=1&appid=befebd5c21afa73e074ce366b9c1c094";
-
-        fetch(requestUrl).then(function(response) {
-            if(!response.ok) {
-                alert("No information found for "+cityName);
-            } 
-            return response.json();
-            
-        }).then(function(data) {
-            
-            var latitude=data[0].lat;
-            var longitude=data[0].lon;
-
-            var forecastRequestURL="https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&appid=befebd5c21afa73e074ce366b9c1c094";
-
-            fetch(forecastRequestURL).then(function(response) {
-
-                if(!response.ok) {
-                    alert("No forecast found for "+cityName);
-                } 
-                
-                return response.json();
-            }).then(function(data){
-                console.log(data);
-            });
-        })
-
-    }
-
+//getting dates for five day forecast
+$(document).ready(function(){
+    $("#hello3").text(moment().add( 1, "days").calender());
 });
-*/
+
+$(document).ready(function(){
+    $("#hello4").text(moment().format("L"));
+});
+
+$(document).ready(function(){
+    $("#hello5").text(moment().format("L"));
+});
+
+$(document).ready(function(){
+    $("#hello6").text(moment().format("L"));
+});
+
+$(document).ready(function(){
+    $("#hello7").text(moment().format("L"));
+});
+
+
+
+
+
