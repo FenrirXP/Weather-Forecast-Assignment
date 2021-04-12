@@ -57,7 +57,8 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
         fetch(forecastRequestUrl).then(function(response) {
             return response.json();
             }).then(function(data) {
-            console.log(data);
+
+            console.log(data.daily);
 
             document.getElementById("forecastWeather1").innerText=data.daily.temp;
             document.getElementById("forecastWeather2").innerText=data.daily.temp;
@@ -65,6 +66,15 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             document.getElementById("forecastWeather4").innerText=data.daily.temp;
             document.getElementById("forecastWeather5").innerText=data.daily.temp;
             
+            var forecast = ["0","1","2","3","4"];
+            console.log(forecast.length);
+
+            for(var i=0; i<forecast.length; i++) {
+
+                console.log("Temp:"+forecast[i]);
+
+                
+            }
 
     })
 })
