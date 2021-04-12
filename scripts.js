@@ -37,7 +37,7 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             document.getElementById("currentTemperature").innerText=temperatureConverter(data.main.temp);
             document.getElementById("currentHumidity").innerText=data.main.humidity;
             document.getElementById("currentWind").innerText=data.wind.speed;
-            //document.getElementById("currentIndex").innerText=data.main.uv;
+           // document.getElementById("currentIndex").innerText=data.main.uvi;
 
         })
 
@@ -58,6 +58,13 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             return response.json();
             }).then(function(data) {
             console.log(data);
+
+            document.getElementById("forecastWeather1").innerText=data.daily.temp;
+            document.getElementById("forecastWeather2").innerText=data.daily.temp;
+            document.getElementById("forecastWeather3").innerText=data.daily.temp;
+            document.getElementById("forecastWeather4").innerText=data.daily.temp;
+            document.getElementById("forecastWeather5").innerText=data.daily.temp;
+            
 
     })
 })
