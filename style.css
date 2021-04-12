@@ -20,17 +20,29 @@
   border:2px solid black;
   }
 
-  .forecastContainer {
-    height: 300px;
-    width: 1200px;
-    background-color: rgb(231, 230, 230);
-    position: absolute;
-    top:600px;
-    left:323px;
-    border:2px solid black;
+ .col {
+  height: 250px;
+  background: rgb(66, 118, 185);
+     }
+.row {
+  width: 1200px;
+  position: relative;
+  padding-bottom: 20px;
+  left:340px;
+  top:350px;
+    
   }
 
-#cityName {
+.forecastContainer {
+  position: relative;
+  left:340px;
+  top:350px;
+  font-weight: bold;
+  font-size:24px;
+
+}
+
+  #cityName {
     height: 5px;
     position: absolute;
     left:60px;
@@ -105,12 +117,3 @@
   left:350px;
 }
 
-#fiveDayForecast {
-  position: absolute;
-  left:60px;
-  font-weight: bold;
-  font-size: 30px;
-  top:550px;
-  left:350px;
-}
-}

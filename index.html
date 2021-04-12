@@ -24,7 +24,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
  
-    
     <title>Weather Dashboard</title>
    
   </head>
@@ -48,7 +47,7 @@
 
     
     <div id="overallCurrentTemp">
-      <b>Temperature:</b> <span id="currentTemperature" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)" class="outputFahrenheit">Temperature now</span> Farenheit
+      <b >Temperature: <span id="outputFahrenheit"></span></b> <span id="currentTemperature" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">Temperature now</span> Farenheit
     </div>
     
     <div id="overallCurrentHumidity">
@@ -62,8 +61,14 @@
     </div>
 
 
-    <div class="forecastContainer"></div>
-    <div id="fiveDayForecast" class="fiveDayForecast"> 5 Day Forecast:
+    <div class="forecastContainer">5 Day Forecast:</div>
+      <div class="row"> 
+            <div class="col mx-1"></div>
+            <div class="col mx-1"></div>
+            <div class="col mx-1"></div>
+            <div class="col mx-1"></div>
+            <div class="col mx-1"></div>
+      </div>
       
     </div>
   
@@ -77,5 +82,5 @@
     <script type="text/javascript" src="scripts.js"></script>
 
 
-    </body>
+  </body>
 </html>
