@@ -7,6 +7,7 @@ $(document).ready(function(){
 function temperatureConverter(valNum) {
     valNum = parseFloat(valNum);
     document.getElementById("outputFahrenheit").innerHTML=((valNum-273.15)*1.8)+32;
+    
   }
 
 
@@ -29,10 +30,11 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
         }).then(function(data) {
             console.log(data);
 
-            document.getElementById("currentTemperature").innerText=data.main.temp;
+            document.getElementById("currentTemperature").innerText=temperatureConverter(data.main.temp);
             document.getElementById("currentHumidity").innerText=data.main.humidity;
             document.getElementById("currentWind").innerText=data.wind.speed;
             document.getElementById("currentIndex").innerText=data.main.humidity;
+            
         })
 
     }
