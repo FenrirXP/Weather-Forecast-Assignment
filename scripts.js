@@ -60,19 +60,22 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
 
             console.log(data.daily);
 
+            
+            var forecast = ["0","1","2","3","4"];
+            console.log(forecast.length);
+
+            for(var i=0; i<data.daily.length; i++) {
+
+                console.log("Temp:"+data.daily[i]);
+
             document.getElementById("forecastWeather1").innerText=data.daily.temp;
             document.getElementById("forecastWeather2").innerText=data.daily.temp;
             document.getElementById("forecastWeather3").innerText=data.daily.temp;
             document.getElementById("forecastWeather4").innerText=data.daily.temp;
             document.getElementById("forecastWeather5").innerText=data.daily.temp;
             
-            var forecast = ["0","1","2","3","4"];
-            console.log(forecast.length);
-
-            for(var i=0; i<data.length; i++) {
-
-                console.log("Temp:"+data[i]);
-
+                
+                
                 
             }
 
