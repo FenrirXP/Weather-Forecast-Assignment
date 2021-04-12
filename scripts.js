@@ -11,6 +11,7 @@ function temperatureConverter(valNum) {
   }
 
 
+
 document.getElementById("cityForm").addEventListener("submit",function(event) {
     event.preventDefault();
     var cityName=document.getElementById("cityNameInput").value;
@@ -33,10 +34,52 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             document.getElementById("currentTemperature").innerText=temperatureConverter(data.main.temp);
             document.getElementById("currentHumidity").innerText=data.main.humidity;
             document.getElementById("currentWind").innerText=data.wind.speed;
-            document.getElementById("currentIndex").innerText=data.main.humidity;
+            //document.getElementById("currentIndex").innerText=data.main.uv;
             
         })
 
     }
 
 });
+
+
+
+/*document.getElementById("cityForm").addEventListener("submit",function(event) {
+    event.preventDefault();
+    var cityName=document.getElementById("cityNameInput").value;
+    if(!cityName) {
+        alert("Please enter the name of a city.");
+    } else {
+        document.getElementById("cityName").innerText=cityName;
+
+        var requestUrl="http://api.openweathermap.org/geo/1.0/direct?q"+cityName+"&limit=1&appid=befebd5c21afa73e074ce366b9c1c094";
+
+        fetch(requestUrl).then(function(response) {
+            if(!response.ok) {
+                alert("No information found for "+cityName);
+            } 
+            return response.json();
+            
+        }).then(function(data) {
+            
+            var latitude=data[0].lat;
+            var longitude=data[0].lon;
+
+            var forecastRequestURL="https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&appid=befebd5c21afa73e074ce366b9c1c094";
+
+            fetch(forecastRequestURL).then(function(response) {
+
+                if(!response.ok) {
+                    alert("No forecast found for "+cityName);
+                } 
+                
+                return response.json();
+            }).then(function(data){
+                console.log(data);
+            });
+        })
+
+    }
+
+});
+*/
