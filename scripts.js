@@ -11,16 +11,19 @@ function temperatureConverter(valNum) {
   }
 
 
-
+//function to get current weather
 document.getElementById("cityForm").addEventListener("submit",function(event) {
     event.preventDefault();
     var cityName=document.getElementById("cityNameInput").value;
+    
     if(!cityName) {
         alert("Please enter the name of a city.");
     } else {
         document.getElementById("cityName").innerText=cityName;
 
         var requestUrl="http://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=befebd5c21afa73e074ce366b9c1c094";
+        var fiveDayRequestUrl="http://api.openweathermap.org/geo/1.0/direct?q="+cityName+"&limit=5&appid=befebd5c21afa73e074ce366b9c1c094";
+        
 
         fetch(requestUrl).then(function(response) {
             if(!response.ok) {
@@ -35,11 +38,30 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             document.getElementById("currentHumidity").innerText=data.main.humidity;
             document.getElementById("currentWind").innerText=data.wind.speed;
             //document.getElementById("currentIndex").innerText=data.main.uv;
-            
+
         })
 
-    }
+            
+        fetch(fiveDayRequestUrl).then(function(response) {
+            return response.json();
+            }).then(function(data) {
+            console.log(data);
 
+        
+
+        var latitude=data[0].lat;
+        var longitude=data[0].lon;
+
+        var forecastRequestUrl="https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&appid=befebd5c21afa73e074ce366b9c1c094";
+        
+        fetch(forecastRequestUrl).then(function(response) {
+            return response.json();
+            }).then(function(data) {
+            console.log(data);
+
+    })
+})
+    }
 });
 
 
