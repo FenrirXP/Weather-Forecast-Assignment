@@ -69,9 +69,9 @@ document.getElementById("cityForm").addEventListener("submit",function(event) {
             var forecast = ["0","1","2","3","4"];
             console.log(forecast.length);
 
-            for(var i=0; i<forecast.length; i++) {
+            for(var i=0; i<data.length; i++) {
 
-                console.log("Temp:"+forecast[i]);
+                console.log("Temp:"+data[i]);
 
                 
             }
